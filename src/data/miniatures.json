@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nombre":"Ford Falcon Sprint",
+        "anio": 1973
+    },
+    {
+        "id": 2,
+        "nombre":"Peugeot 504 SRD",
+        "anio": 1983
+    },
+    {
+        "id": 3,
+        "nombre":"IKA Torino TSX",
+        "anio": 1976
+    },
+    {
+        "id": 4,
+        "nombre":"Fiat 600R",
+        "anio": 1972
+    }
+]
