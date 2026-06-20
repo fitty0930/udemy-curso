@@ -1,3 +1,4 @@
+// @ts-check
 import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
@@ -5,6 +6,7 @@ import ConditionalSection from './sections/conditional';
 import MiniaturesItem from './sections/miniaturesItem';
 import cars from './data/miniatures.json';
 import Forms from './sections/forms'
+import BitCoinPriceContainer from './sections/container-component';
 
 // function Hello(props){
 //   return <h2> {props.title} </h2>
@@ -71,7 +73,17 @@ class Contador extends Component{
 }
 
 
-
+class Box extends Component {
+  render(){
+    return (
+      <div style={{border: '1px solid #000', margin:5, padding:5}}>
+        {this.props.children}
+      </div>
+    )
+      
+    
+  }
+}
 
 class App extends Component {
   constructor(){
@@ -100,13 +112,51 @@ class App extends Component {
   render(){
     const numbers = [1,1,2,3,3,4,5];
     return <div onMouseMove={this.handleMouseMove}>
-    <h4> Eventos </h4>
+    {/* <h4> Eventos </h4>
     <button onClick={this.handleClick}>
       a ve!
-    </button>
+    </button> */}
     {/* <p>{this.state.mouseX}, {this.state.mouseY}</p> */}
-    <Forms/>
+    {/* <Forms/> */}
+    <Box> Hola! soy un children! </Box>
+    <Article date={new Date().toLocaleDateString()}
+    author={'martin'}
+    title="Bueeeeeenas">
+      <p>El ultimo bueeenas</p>
+      <strong> qepd </strong>
+    </Article>
   </div>
+  }
+}
+
+
+
+/**
+ * @typedef {Object} ArticleProps
+ * @property {string} author
+ * @property {string} title
+ * @property {string} date
+ * @property {import('react').ReactNode} children
+ */
+
+/** @extends {Component<ArticleProps>} */
+class Article extends Component{
+  // constructor(props){
+  //   super(props);
+  //   console.warn('prueba')
+  //   if(typeof props.author === 'undefined'){
+  //     console.warn('author prop is req');
+  //     // throw new Error('author prop is requerid');
+  //   }
+  // }
+
+  render(){
+    const {author, children, date, title} = this.props
+    return (
+      <section>
+        <BitCoinPriceContainer/>
+      </section>
+    )
   }
 }
 
